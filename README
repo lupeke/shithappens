@@ -1,0 +1,29 @@
+Shit happens is an open source wireless physical alert ideal for those (boring) people who like to tweet everything about their life. Everytime the user goes to the bathroom, shit happens will wirelessly alert its computer, which will send a twitter message warming its followers about what he/she is doing.
+
+This project is the result of our first co.lab weekend project at laboratorio.
+
+== Hardware parts
+
+* 2 Arduino boards
+* 1 RF link pair (receiver and transmitter)
+* 1 Infrared proximity sensor
+* 1 5V power supply
+* Assorted wires
+
+Sorry, we wont tell you how to setup this components here, but there are a lot of good references on the web.
+
+= Software requirements
+
+* Python Twitter
+	http://code.google.com/p/python-twitter/
+* pySerial
+	http://pyserial.wiki.sourceforge.net/pySerial
+
+
+= Software setup
+
+Just upload the RFreceive sketch to the Arduino connected on RF receiver module and do the same for RFtrasmit sketch. Then open shithappens.py and replace your twitter account info.
+
+After doing it, run the following command.
+
+	$ python shithappens.py
