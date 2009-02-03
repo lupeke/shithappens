@@ -20,18 +20,24 @@ import twitter
 import time
 from random import randrange
 
+# put the correct serial port here
+serial_port = "YOUR_SERIAL_PORT"
+# replace this by your account info
 twitt_login = "REPLACE_TWITTER_LOGIN"
 twitt_pass = "REPLACE_TWITTER_PASS"
+# you can also customize the messages which will be sent
+messages = [ "I'm just sitting on the sink now."
+             "Reading the news while sitting in the bathroom sink.",
+             "The bathroom sink is a good place to have good ideas.",
+             "Almost lounging in the bathroom sink." ]
 
-serconn = serial.Serial('/dev/tty.usbserial-A1001NQe', 2400)
+# do not touch anything from here
+serconn = serial.Serial(serial_port, 2400)
 min_distance = 60
 max_distance = 400
 minimum_time = 150
 now = time.strftime("%a, %d %b %Y %H:%M:%S +0000", 
                     time.gmtime())
-messages = [ "Guess where I am?",
-             "It smells good.", 
-             "Oops... I did it again." ]
 sign = "http://is.gd/i4Io #shithappens"
     
 
@@ -62,7 +68,7 @@ if __name__ == '__main__':
     	    working_time = 0
     	    idle_time = 0
     	    if previous_state == False:
-    	        msg = "%s - %s" % [ messages[randrange(len(messages))], sign ]
+    	        msg = "%s %s" % [ messages[randrange(len(messages))], sign ]
                 twitter.PostUpdate(msg)
                 print "%s: message sent" % now
                 
