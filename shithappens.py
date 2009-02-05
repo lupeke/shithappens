@@ -27,9 +27,11 @@ twitt_login = "REPLACE_TWITTER_LOGIN"
 twitt_pass = "REPLACE_TWITTER_PASS"
 # you can also customize the messages which will be sent
 messages = [ "I'm just sitting on the sink now."
-             "Reading the news while sitting in the bathroom sink.",
+             "Reading the news while sitting on the bathroom sink.",
              "The bathroom sink is a good place to have good ideas.",
-             "Almost lounging in the bathroom sink." ]
+             "Almost lounging on the bathroom sink.",
+             "It's just happened, as always.",
+             "Damn... no more toilet paper! " ]
 
 # do not touch anything from here
 serconn = serial.Serial(serial_port, 2400)
